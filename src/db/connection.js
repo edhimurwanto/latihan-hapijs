@@ -1,4 +1,5 @@
 import { createConnection as connect } from 'typeorm';
+import entities from '../db/entities';
 
 const createConnection = async () => {
     const connection = await connect({
@@ -9,8 +10,7 @@ const createConnection = async () => {
         database: process.env.DB_NAME,
         synchronize: process.env.DB_SYNC,
         logging: process.env.DB_LOGGING,
-        entities: ''
-
+        entities
     });
 
     return connection;

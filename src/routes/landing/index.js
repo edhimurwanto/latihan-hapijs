@@ -4,7 +4,7 @@ const landing = {
     handler: (request, h) => {
         return h.response({
             statusCode: 200,
-            message: 'Hello world.'
+            message: 'Hello world.',
         });
     }
 };

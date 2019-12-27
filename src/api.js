@@ -1,7 +1,8 @@
 import Hapi from '@hapi/hapi';
-import configure from "./config";
-import routes from "./routes";
+import configure from './config';
+import routes from './routes';
 import createDbConnection from './db/connection';
+import validate from '../src/config/auth.validate';
 
 process.on('unhandledRejection', (err) => {
   console.log(err);
@@ -16,14 +17,17 @@ export default async () => {
     host: process.env.APP_HOST,
   });
 
+  await server.register(require('@hapi/basic'));
+
+  server.auth.strategy('simple', 'basic', { validate });
+
   server.route(routes);
-  console.log(connection);
 
   if (connection.isConnected) {
       
     await server.start();
     console.log(`Database connection name ${connection.name}.`);
-    console.log('Server', process.env.APP_NAME , 'running on %s', server.info.uri);
+    console.log(`Server ${process.env.APP_NAME}, running on ${server.info.uri}`);
   }
 
   return server.listener;

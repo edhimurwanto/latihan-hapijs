@@ -1,6 +1,6 @@
-import landing from "./landing";
+import landing from './landing';
+import customer from './customer';
+import auth from './auth';
+import transaction from './transactions';
 
-const routes = [
-    landing
-];
-export default routes;
+export default [].concat(landing, customer, auth, transaction);
