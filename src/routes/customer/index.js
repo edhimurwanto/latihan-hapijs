@@ -27,17 +27,18 @@ const customerRoutes = [
             auth: 'simple',
             handler: async (request, h) => {
 
-                const { id } = request.params;
-                const customer = await customerService.findOne({ id });
-
-                if (!customer) {
-                    throw Boom.notFound('Customer not found.');
-                } else {
+                try {
+                    const { id } = request.params;
+                    const customer = await customerService.findOne({ id });
+ 
                     return h.response({
                         statusCode: 200,
                         message: 'Success',
                         customer
                     }).code(200);
+
+                } catch (error) {
+                    return error;
                 }
             }
         }
@@ -69,11 +70,16 @@ const customerRoutes = [
         config: {
             auth: 'simple',
             handler: async (request, h) => {
-                const customer = await customerService.update(request.payload);
-                return h.response({
-                    statusCode: 200,
-                    customer
-                }).code(200);
+                try {
+                    const customer = await customerService.update(request.payload);
+                    return h.response({
+                        statusCode: 200,
+                        customer
+                    }).code(200);
+                } catch (error) {
+
+                    return error;
+                }
             },
             validate: {
                 payload: {
