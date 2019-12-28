@@ -45,13 +45,13 @@ const CustomerSchema = new EntitySchema({
         },
         createdAt: {
             name: 'created_at',
-            type: 'timestamp',
-            createDate: true,
+            type: 'date',
+            default: ()=> 'CURRENT_TIMESTAMP'
         },
         updatedAt: {
             name: 'updated_at',
-            type: 'timestamp',
-            updateDate: true,
+            type: 'date',
+            default: ()=> 'CURRENT_TIMESTAMP'
         },
     },
 });

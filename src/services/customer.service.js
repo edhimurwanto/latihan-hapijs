@@ -1,6 +1,7 @@
 import { getRepository as repository, Like } from 'typeorm';
 import Customer from '../models/customer.model';
 import bcrypt from 'bcrypt';
+import Boom from '@hapi/boom';
 
 export default class CustomerService {
     customerRepository() {
@@ -11,8 +12,11 @@ export default class CustomerService {
         return this.customerRepository().find();
     }
 
-    findOne(id) {
-        return this.customerRepository().findOne(id);
+    async findOne(id) {
+        const customer = await this.customerRepository().findOne(id);
+
+        if (!customer) throw Boom.notFound('Customer not found.');
+        return customer;
     }
 
     findByEmail(email) {
@@ -37,17 +41,16 @@ export default class CustomerService {
     async create(customerData) {
         const { password } = customerData;
         customerData.password = await this.beforeCreate(password);
-        return this.customerRepository().save(customerData);
+        return await this.customerRepository().save(customerData);
     }
 
     async update(customerData) {
-        const id = `${customerData.id}`;
-        let customer = this.customerRepository().findOne(id);
-        if (customer) {
-            const { password } = customerData;
-            customerData.password = await this.beforeCreate(password);
-            return this.customerRepository().save(customerData);
-        }
+        const id = customerData.id;
+        await this.findOne(id);
+
+        const { password } = customerData;
+        customerData.password = await this.beforeCreate(password);
+        return await this.customerRepository().save(customerData);
     }
 
     async beforeCreate(password) {
