@@ -1,5 +1,5 @@
 import { getRepository as repository, Like } from 'typeorm';
-import Customer from '../models/customer.model';
+import Customer from '../../models/customer.model';
 import bcrypt from 'bcrypt';
 import Boom from '@hapi/boom';
 

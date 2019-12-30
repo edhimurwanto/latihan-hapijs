@@ -1,6 +1,6 @@
 import request from 'supertest';
 import init from '../../src/api';
-import CustomerService from '../../src/services/customer.service';
+import CustomerService from '../../src/services/customer/index';
 
 const service = new CustomerService();
 let server;

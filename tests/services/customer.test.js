@@ -1,4 +1,4 @@
-import CustomerService from '../../src/services/customer.service';
+import CustomerService from '../../src/services/customer';
 import init from '../../src/api';
 import Boom from '@hapi/boom';
 

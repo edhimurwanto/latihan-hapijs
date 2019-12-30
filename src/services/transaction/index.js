@@ -1,6 +1,6 @@
 import { getRepository as repository } from 'typeorm';
-import Transaction from '../models/transaction.model';
-import CustomerService from './customer.service';
+import Transaction from '../../models/transaction.model';
+import CustomerService from '../customer';
 
 const customerService = new CustomerService();
 
