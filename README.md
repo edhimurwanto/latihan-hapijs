@@ -22,11 +22,12 @@ npm run start:dev
 ```
 If application successfully running, then command will show log like this.
 
-![Alt text](https://github.com/edhiuchiha/wallet-app/blob/master/src/assets/launch.png)
+![Alt text](https://github.com/edhiuchiha/latihan-hapijs/blob/master/src/assets/hapi-server.png)
 
 ## Swagger Documentations
 
-To show swagger API documentations, you can type this on web browser.
+There's not yet swagger-documentations
+<!-- To show swagger API documentations, you can type this on web browser.
 
 ```
 http://localhost:3000/api-docs
@@ -34,28 +35,24 @@ http://localhost:3000/api-docs
 
 ![Alt text](https://github.com/edhiuchiha/wallet-app/blob/master/src/assets/swagger-doc.png)
 ## 
-You can test to run the applications with that swagger documentations.
+You can test to run the applications with that swagger documentations. -->
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+You can run the automated test with following command
 
-### Break down into end to end tests
-
-Explain what these tests test and why
+### Authomated test command without coverage
 
 ```
-Give an example
+npm test
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+### Authomated test command and show the coverage
 
 ```
-Give an example
+npm run test:coverage
 ```
-
+<!-- 
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
@@ -72,13 +69,15 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).  -->
 
 ## Authors
 
 * **@edhi.uchiha** - *Initial work* - [PurpleBooth](https://github.com/edhiuchiha)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+## My Social Media
+* **Instagram -->** [@edhi.uchiha](https://www.instagram.com/edhi.uchiha)
+<!-- See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
@@ -88,4 +87,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * Hat tip to anyone whose code was used
 * Inspiration
-* etc
+* etc -->
