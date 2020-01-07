@@ -70,4 +70,8 @@ export default class TransactionService {
         } else return 0;
     }
 
+    async delete(id) {
+        await this.transactionRepository().delete(id);
+    }
+
 }
