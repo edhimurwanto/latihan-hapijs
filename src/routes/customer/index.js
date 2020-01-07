@@ -1,4 +1,4 @@
-import CustomerService from '../../services/customer.service';
+import CustomerService from '../../services/customer';
 import Joi from '@hapi/joi';
 import Boom from '@hapi/boom';
 const customerService = new CustomerService();
@@ -47,6 +47,7 @@ const customerRoutes = [
         method: 'POST',
         path: '/customers',
         config: {
+            auth: false,
             handler: async (request, h) => {
                 const customer = await customerService.create(request.payload);
                 return h.response({
