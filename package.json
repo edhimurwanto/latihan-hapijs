@@ -24,7 +24,7 @@
     "@hapi/basic": "^5.1.1",
     "@hapi/cookie": "^10.1.2",
     "@hapi/hapi": "^18.4.0",
-    "bcrypt": "^3.0.7",
+    "bcrypt": "^5.0.0",
     "mysql": "^2.17.1",
     "path": "^0.12.7",
     "sqlite": "^3.0.3",
